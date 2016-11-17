@@ -1,0 +1,230 @@
+<!doctype html>
+<html ng-app="beautifulbeginning">
+
+<head>
+    <title>Beautiful Beginning</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-layout/src/ui-layout.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/ui-navbar/release/css/ui-navbar.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="Images/Colorstrip.png" style="width: 100%">
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div>
+                    <label class="Live_Chat_Now">Call us at: 708-246-1212</label>
+                    <button class="btn btn-default" type="submit">LIVE CHAT NOW</button>
+                </div>
+            </div>
+            <div class="col-sm-6 Baby_Registry ">
+                <div class="col-sm-4">
+                    <a href="btn btn-default"> Baby Registry</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="btn btn-default"> Login/Register</a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#"><span class ="glyphicon glyphicon-shopping-cart "> <label class="Baby_Registry"> Shopping Cart 
+                    </label>                 
+                    </span></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <div ui-layout class="layout-mock2">
+                    <div class="center-back"></div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div ui-layout class="layout-mock">
+                    <a href="/home">
+                        <div class="center-back"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div ui-layout class="layout-mock3">
+                    <div class="Search_this_site form-group">
+                        <form class="form-search form-inline " action="">
+                            <input type="text" class="search-query form-control" style="width:100%;" name="search" placeholder="Search this site" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <hr>
+        <div class="row">
+            <div ng-controller="NavigationController">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse" ng-class="!navCollapsed && 'in'">
+                        <ul class="nav menu">
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">BABY APPAREL</a>
+                                <tree tree="tree1"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">BABY GIFTS</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">CHRISTENING</a>
+                                <tree tree="tree2"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">FURNITURE</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">BEDDING</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">DECOR</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">LIGHTENING</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">SALE</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                            <li uib-dropdown="">
+                                <a href="#" uib-dropdown-toggle="">BRANDS</a>
+                                <tree tree="tree"></tree>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </div>
+        <div ui-view></div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                    <h2> About Us</h2>
+                </div>
+                <table ng-controller="abtrepeatctrl" class="footer_text">
+                    <tr ng-repeat="aboutusmenu in aboutusmenus">
+                        <td><a href="#">{{aboutusmenu}}</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                    <h2> Service</h2>
+                </div>
+                <table ng-controller="abtrepeatctrl" class="footer_text">
+                    <tr ng-repeat="servicemenu in servicemenus">
+                        <td><a href="#">{{servicemenu}}</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-2">
+                <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                    <h2> Shop</h2>
+                </div>
+                <table ng-controller="abtrepeatctrl" class="footer_text">
+                    <tr ng-repeat="shopmenu in shopmenus">
+                        <td><a href="#">{{shopmenu}}</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                    <h2> Contact Us</h2>
+                </div>
+                <table ng-controller="abtrepeatctrl" class="footer_text2">
+                    <tr ng-repeat="contactusmenu1 in contactusmenus_1">
+                        <td>{{contactusmenu1}}</td>
+                    </tr>
+                    <tr class="row2" ng-repeat="contactusmenu2 in contactusmenus_2">
+                        <td>{{contactusmenu2}}</td>
+                    </tr>
+                    <tr ng-repeat="contactusmenu3 in contactusmenus_3">
+                        <td>{{contactusmenu3}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                    <h2> Follow Us</h2>
+                </div>
+                <div ng-controller="abtrepeatctrl">
+                    <div class="row">
+                        <a href="#">
+                            <img ng-src="{{image.src}}" ng-repeat="image in images track by $index" class="icon_img" description="{{image.description}}" />
+                        </a>
+                    </div>
+                    <br>
+                    <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+                        <h2>Newsletter</h2>
+                    </div>
+                    <div class="message_footer">
+                        {{message}}
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 form-group">
+                            <input type="email" class="email Search_this_site form-control" placeholder="Email Address..." />
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-default" type="submit">SEND</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="Images/Colorstrip.png" style="width: 100%">
+        </div>
+        <div class="footer">
+            <div class="col-sm-8">
+                &copy; Beautiful Beginning. All Rights Reserved |<a href="#"> Site Map</a> |<a href="#"> Privacy Policy</a> | <a href="#">Terms and Conditions</a>
+                <div class="row">
+                    <img src="Images/PowerButton.png" /> <img src="Images/POWEREDBY.png" /> <img src="Images/AELogo.png" /> Website designed and developed by Americaneagle.com
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div ui-layout class="layout-mock-footer">
+                    <div class="center-back"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div ui-view></div> -->
+    </div>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-layout/src/ui-layout.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/ui-navbar/release/js/ui-navbar.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="app.js"></script>    
+</body>
+
+</html>

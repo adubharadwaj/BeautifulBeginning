@@ -1,0 +1,68 @@
+<div class="row">
+    <div ng-controller="CarouselDemoCtrl">
+        <div style="height: 360px">
+            <div uib-carousel active="active" interval="myInterval">
+                <div uib-slide ng-repeat="slide in slides" index="$index">
+                    <a href="#"><img ng-src="{{slide.image}}" style="max-height:350px; margin:0 auto;"></a>
+                    <div class="carousel-caption">
+                        <p>{{slide.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-3">
+        <div style="height: 250px">
+            <img src="Images/FeaturedProductsLore.png" class="center-block" description="Featured Products" />
+            <br>
+            <button class="btn btn-default center-block" type="submit">SEE ALL</button>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div style="height: 250px">
+            <a href="#">
+                <img ng-src="Images/Layer354.png" class="img-thumbnail img-responsive backgroundimg center-block" style="background:url('/Images/Layer347.png'); " description="Featured Products" />
+                <div class="description_text center-block">Hazel Ruffle Top and Capri Set by Angel Dear</div>
+                <div class="description_text center-block">$49.00</div>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div style="height: 250px">
+            <a href="#">
+                <img ng-src="Images/Layer351copy.png" class="img-thumbnail img-responsive backgroundimg center-block" description="Featured Products" style="background-image:url('/Images/Layer347.png')" />
+                <div class="description_text center-block">Alexis Crib with Rose Garland by Newport Cottages</div>
+                <div class="description_text center-block">$1,395.00</div>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <a href="#">
+            <img ng-src="Images/Layer350copy2.png" class="img-thumbnail img-responsive backgroundimg center-block" description="Featured Products" />
+            <div class="description_text center-block">Little G Plush Giraffe by Little Giraffe</div>
+            <div class="description_text center-block">$42.00</div>
+        </a>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="About_Us__Our_Story__Baby_Registry__Store_Locat">
+        <h2> We Love Babies</h2>
+    </div>
+    <div ng-controller="wlbCtrl">
+        <div class="wlb_text">
+            {{message}}
+        </div>
+        <br>
+        <div class="wlb_text">
+            {{message2}}<a href="#" class="a1">More About Us</a>
+        </div>
+    </div>
+    <div class="ldj">
+        Love , Debbie & Jackie
+    </div>
+</div>
+<hr>
